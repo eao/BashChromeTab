@@ -1,0 +1,2 @@
+#!/bin/bash
+numberofwindows="$(xdotool search --onlyvisible --class google-chrome | wc -l)"; if [ "$numberofwindows" -gt 0 ]; then xdotool search --onlyvisible --class 'google-chrome' windowactivate --sync %$numberofwindows key --clearmodifiers --window 0 ctrl+t; else nohup google-chrome </dev/null >/dev/null 2>&1 & fi
